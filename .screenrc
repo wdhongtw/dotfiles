@@ -1,0 +1,47 @@
+# Go to home dir
+chdir
+
+# Automatically detach on hangup.
+autodetach on
+
+# Enable buttom status bar
+hardstatus on
+hardstatus alwayslastline
+#hardstatus string '%{= dd}%{G}[ %S ]%{w}  %?%-w%?%{G}%n %t%{w}%?%+w%?%= %{G}[ %H %0c %m-%d ]%{= dd}'
+#hardstatus string '%{= gd}%{k} %S %{= w.}%{K}  %?%-w%?%{g}%n %t%{K}%?%+w%?%= %{= g.}%{k} %H %0c %m-%d %{= dd}'
+#hardstatus string '%{= gd}%{k} %S %{= W.}%{K}  %?%-w%?%{g}%n%f%t%{K}%?%+w%?%= %{= g.}%{k} %H %0c %m-%d %{= dd}'
+#hardstatus string '%{= gd}%{k} %S %{= W.}%{K}  %?%-w%?%{g}%n%f%t%{K}%?%+w%?%= %{= g.}%{k} %H %0c %m-%d %{= dd}'
+#hardstatus string '%{= gd}%{k} %S %{= W.}%{g}  %?%-w%?%{k}%n%f%t%{g}%?%+w%?%= %{= g.}%{k} %H %0c %m-%d %{= dd}'
+#hardstatus string '%{= gd}%{k}== %S %{= k.}%{w}  %?%-w%?%{G}%n%f%t%{w}%?%+w%?%= %{= g.}%{k} %H %0c %m-%d ==%{= dd}'
+#hardstatus string '%{= gd}%{k}  %S  %{= k.}%{w}  %?%-w%?%{G}%n%f%t%{w}%?%+w%?%= %{= g.}%{k}  %H  %{= dd}'
+#hardstatus string '%{= Bd}%{k}  %S  %{= k.}%{w}  %?%-w%?%{+b }%{B}%n%f%t%{-b }%{w}%?%+w%?%= %{= B.}%{k}  %H  %{= dd}'
+hardstatus string '%{= gd}%{k}  %S  %{= k.}%{w}  %?%-w%?%{+b }%{G}%n%f%t%{-b }%{w}%?%+w%?%= %{= g.}%{k}  %H  %{= dd}'
+
+# Disable visaul bell
+vbell off
+
+# Enable 256 color
+term "screen-256color"
+
+# Change default prefix key to Ctrl-B
+escape ^Bb
+
+# Let window count starting with 1
+bind "c" screen 1
+bind "^c" screen 1
+bind "0" select 10
+screen 1
+
+# Bind function keys to common tasks
+bindkey "^[OP"   screen 1
+bindkey "^[[11~" screen 1
+bindkey "^[OQ"   screen 1
+bindkey "^[[12~" screen 1
+bindkey "^[OR"   prev
+bindkey "^[[13~" prev
+bindkey "^[OS"   next
+bindkey "^[[14~" next
+bindkey "^[[15~" source .screenrc
+bindkey "^[[17~" detach
+bindkey "^[[18~" copy
+bindkey "^[[19~" title
