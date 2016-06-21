@@ -19,9 +19,6 @@ nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-w> <C-w><C-w>
-" Disable search highlight, a dirty hack
-"execute "set <M-u>=\eu"
-"nnoremap <M-u> :noh<CR>
 
 " ==== Spaces & Tabs ====
 set tabstop=4
@@ -36,13 +33,6 @@ set number
 set relativenumber
 set background=dark
 set cursorline
-
-"highlight clear StatusLine
-"highlight clear ModeMsg
-"autocmd InsertEnter * highlight StatusLine ctermfg=Red
-"autocmd InsertLeave * highlight clear StatusLine
-"autocmd InsertEnter * highlight ModeMsg ctermfg=Red
-"autocmd InsertLeave * highlight clear ModeMsg
 
 " ==== Ruler & Status Line ====
 set laststatus=1
@@ -65,19 +55,9 @@ autocmd FileType c set cindent
 " Mark trailing space and line longer than 80 char
 call matchadd('ErrorMsg', '\%>80v.\+')
 call matchadd('ErrorMsg', '\s\+$')
-"autocmd BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>80v.\+')
-"autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\s\+$')
-"autocmd BufWinLeave * call matchdelete(w:m1)
-"autocmd BufWinLeave * call matchdelete(w:m2)
 
 set textwidth=80
 set formatoptions=c,q,r,t
-" c     Auto-wrap comments using textwidth, inserting the
-"       current comment leader automatically.
-" q     Allow formatting of comments with "gq".
-" r     Automatically insert the current comment leader
-"       after hitting <Enter> in Insert mode.
-" t     Auto-wrap text using textwidth (does not apply to comments)
 
 " Enable folding feature
 set nofoldenable

@@ -31,12 +31,12 @@ alias ll="ls -al"
 export GROFF_NO_SGR="1"
 
 # Set color of less pager
-export LESS_TERMCAP_mb=$(printf "\e[1;91m")
-export LESS_TERMCAP_md=$(printf "\e[1;94m")
+export LESS_TERMCAP_mb=$(printf "\e[1;31m")
+export LESS_TERMCAP_md=$(printf "\e[1;34m")
 export LESS_TERMCAP_me=$(printf "\e[0m")
 export LESS_TERMCAP_so=$(printf "\e[7m")
 export LESS_TERMCAP_se=$(printf "\e[0m")
-export LESS_TERMCAP_us=$(printf "\e[1;4;92m")
+export LESS_TERMCAP_us=$(printf "\e[1;4;32m")
 export LESS_TERMCAP_ue=$(printf "\e[0m")
 
 # Set default pager and editor
