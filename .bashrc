@@ -5,9 +5,6 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-# Uncomment this line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
 # Disable PROMPT_COMMAND for better UX in screen and tmux
 case "$TERM" in
 screen*|tmux*)
@@ -18,7 +15,11 @@ screen*|tmux*)
 esac
 
 # Set command prompt
-PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
+if [ $UID -eq 0 ]; then
+    PS1="\[$(tput bold)$(tput setaf 1)[\u@\h \W]\$\]$(tput sgr0) "
+else
+    PS1="\[$(tput bold)$(tput setaf 2)[\u@\h \W]\$\]$(tput sgr0) "
+fi
 
 # Short Commands
 alias view="vim -R"
@@ -31,13 +32,13 @@ alias ll="ls -al"
 export GROFF_NO_SGR="1"
 
 # Set color of less pager
-export LESS_TERMCAP_mb=$(printf "\e[1;31m")
-export LESS_TERMCAP_md=$(printf "\e[1;34m")
-export LESS_TERMCAP_me=$(printf "\e[0m")
-export LESS_TERMCAP_so=$(printf "\e[7m")
-export LESS_TERMCAP_se=$(printf "\e[0m")
-export LESS_TERMCAP_us=$(printf "\e[1;4;32m")
-export LESS_TERMCAP_ue=$(printf "\e[0m")
+export LESS_TERMCAP_mb="$(tput bold)$(tput setaf 1)"
+export LESS_TERMCAP_md="$(tput bold)$(tput setaf 4)"
+export LESS_TERMCAP_me="$(tput sgr0)"
+export LESS_TERMCAP_so="$(tput rev)"
+export LESS_TERMCAP_se="$(tput sgr0)"
+export LESS_TERMCAP_us="$(tput bold)$(tput smul)$(tput setaf 2)"
+export LESS_TERMCAP_ue="$(tput sgr0)"
 
 # Set default pager and editor
 export PAGER="less -s"
