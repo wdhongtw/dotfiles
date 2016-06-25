@@ -16,9 +16,9 @@ esac
 
 # Set command prompt
 if [ $UID -eq 0 ]; then
-    PS1="\[$(tput bold)$(tput setaf 1)[\u@\h \W]\$\]$(tput sgr0) "
+    PS1="\[$(tput bold)$(tput setaf 1)\][\u@\h \W]\$\[$(tput sgr0)\] "
 else
-    PS1="\[$(tput bold)$(tput setaf 2)[\u@\h \W]\$\]$(tput sgr0) "
+    PS1="\[$(tput bold)$(tput setaf 2)\][\u@\h \W]\$\[$(tput sgr0)\] "
 fi
 
 # Short Commands
