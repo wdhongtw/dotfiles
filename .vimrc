@@ -1,9 +1,6 @@
 " .vimrc
 " See: http://vimdoc.sourceforge.net/htmldoc/options.html for details
 
-" For multi-byte character support (CJK support, for example):
-" set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1
-
 filetype on
 filetype plugin on
 filetype indent on
@@ -25,12 +22,13 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
+autocmd FileType java set shiftwidth=2
 autocmd FileType make set noexpandtab
+autocmd FileType sh set shiftwidth=2
 
 " ==== UI Config ====
 set showcmd
 set number
-set relativenumber
 set background=dark
 set cursorline
 
@@ -63,6 +61,7 @@ set formatoptions=c,q,r,t
 set nofoldenable
 set foldmethod=syntax
 autocmd FileType python set foldmethod=indent
+autocmd FileType java set foldmethod=indent
 autocmd FileType xml set foldmethod=indent
 
 " Functions
