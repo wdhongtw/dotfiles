@@ -28,9 +28,6 @@ alias grep="grep -i"
 alias rm="rm -i"
 alias ll="ls -al"
 
-# Allow colorful man page
-export GROFF_NO_SGR="1"
-
 # Set color of less pager
 export LESS_TERMCAP_mb="$(tput bold)$(tput setaf 1)"
 export LESS_TERMCAP_md="$(tput bold)$(tput setaf 4)"
