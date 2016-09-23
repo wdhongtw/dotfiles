@@ -1,13 +1,12 @@
 " .vimrc
-" See: http://vimdoc.sourceforge.net/htmldoc/options.html for details
 
 filetype on
 filetype plugin on
 filetype indent on
+syntax on
+
 " Set extension for markdown file
 autocmd BufNewFile,BufRead *.md  set filetype=markdown
-
-syntax on
 
 " ==== Remap ====
 " Split navigation
@@ -18,13 +17,16 @@ nnoremap <C-l> <C-w><C-l>
 nnoremap <C-w> <C-w><C-w>
 
 " ==== Spaces & Tabs ====
-set tabstop=4
+set tabstop=8
 set shiftwidth=4
 set expandtab
 set smarttab
-autocmd FileType java set shiftwidth=2
 autocmd FileType make set noexpandtab
 autocmd FileType sh set shiftwidth=2
+autocmd FileType c set shiftwidth=2
+autocmd FileType java set shiftwidth=2
+autocmd FileType html set shiftwidth=2
+autocmd FileType css set shiftwidth=2
 
 " ==== UI Config ====
 set showcmd
@@ -62,6 +64,7 @@ set nofoldenable
 set foldmethod=syntax
 autocmd FileType python set foldmethod=indent
 autocmd FileType java set foldmethod=indent
+autocmd FileType sh set foldmethod=indent
 autocmd FileType xml set foldmethod=indent
 
 " Functions
