@@ -49,3 +49,6 @@ export LANGUAGE=en_US.UTF-8
 
 # Enable user-specific host alias
 export HOSTALIASES="$HOME/.hosts"
+
+# Enable empty list while using globbing feature
+shopt -s nullglob
