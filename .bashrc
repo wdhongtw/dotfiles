@@ -5,6 +5,11 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+# Source definitions in local machine
+if [ -f $HOME/.bashrc_local ]; then
+    . $HOME/.bashrc_local
+fi
+
 # Disable PROMPT_COMMAND for better UX in screen and tmux
 case "$TERM" in
 screen*|tmux*)
