@@ -24,6 +24,7 @@ set smarttab
 autocmd FileType make set noexpandtab
 autocmd FileType sh set shiftwidth=2
 autocmd FileType c set shiftwidth=2
+autocmd FileType cpp set shiftwidth=2
 autocmd FileType java set shiftwidth=2
 autocmd FileType html set shiftwidth=2
 autocmd FileType css set shiftwidth=2
