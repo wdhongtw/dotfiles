@@ -21,13 +21,13 @@ set tabstop=8
 set shiftwidth=4
 set expandtab
 set smarttab
-autocmd FileType make set noexpandtab
-autocmd FileType sh set shiftwidth=2
 autocmd FileType c set shiftwidth=2
 autocmd FileType cpp set shiftwidth=2
-autocmd FileType java set shiftwidth=2
-autocmd FileType html set shiftwidth=2
 autocmd FileType css set shiftwidth=2
+autocmd FileType html set shiftwidth=2
+autocmd FileType java set shiftwidth=2
+autocmd FileType make set noexpandtab
+autocmd FileType sh set shiftwidth=2
 
 " ==== UI Config ====
 set showcmd
@@ -63,10 +63,13 @@ set formatoptions=c,q,r,t
 " Enable folding feature
 set nofoldenable
 set foldmethod=syntax
-autocmd FileType python set foldmethod=indent
 autocmd FileType java set foldmethod=indent
+autocmd FileType javascript set foldmethod=indent
+autocmd FileType python set foldmethod=indent
 autocmd FileType sh set foldmethod=indent
 autocmd FileType xml set foldmethod=indent
+nnoremap <S-j> zj
+nnoremap <S-k> zk
 
 " Functions
 :command! -range=% -nargs=0 Tab2Space execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
