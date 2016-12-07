@@ -34,10 +34,8 @@ set background=dark
 set cursorline
 
 " ==== Ruler & Status Line ====
-set laststatus=1
+set laststatus=2
 set ruler
-set rulerformat=%30(%-15.15(%f%m%)%10.10(%5.5l,%-4.4v%)%5.5(%P%)%)
-set fillchars=stl:\ ,stlnc:\ ,fold:-
 
 " ==== Searching ====
 set hlsearch
