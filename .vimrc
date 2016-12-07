@@ -21,13 +21,11 @@ set tabstop=8
 set shiftwidth=4
 set expandtab
 set smarttab
-autocmd FileType c set shiftwidth=2
-autocmd FileType cpp set shiftwidth=2
-autocmd FileType css set shiftwidth=2
-autocmd FileType html set shiftwidth=2
+autocmd FileType c,cpp set shiftwidth=2
+autocmd FileType html,css,javascript set shiftwidth=2
 autocmd FileType java set shiftwidth=2
-autocmd FileType make set noexpandtab
 autocmd FileType sh set shiftwidth=2
+autocmd FileType make set noexpandtab
 
 " ==== UI Config ====
 set showcmd
