@@ -8,11 +8,6 @@ fi
 # Enable empty list while using globbing feature
 shopt -s nullglob
 
-# Source definitions within $HOME/.bashrc.d folder
-for file in $HOME/.bashrc.d/*.bash; do
-  . "$file"
-done
-
 # Disable PROMPT_COMMAND for better UX in screen and tmux
 case "$TERM" in
 screen*|tmux*)
@@ -57,3 +52,8 @@ export LANGUAGE=en_US.UTF-8
 
 # Enable user-specific host alias
 export HOSTALIASES="$HOME/.hosts"
+
+# Source definitions within $HOME/.bashrc.d folder
+for file in $HOME/.bashrc.d/*.bash; do
+  . "$file"
+done
