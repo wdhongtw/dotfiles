@@ -2,7 +2,7 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
+  . /etc/bashrc
 fi
 
 # Enable empty list while using globbing feature
@@ -10,18 +10,18 @@ shopt -s nullglob
 
 # Disable PROMPT_COMMAND for better UX in screen and tmux
 case "$TERM" in
-screen*|tmux*)
+  screen*|tmux*)
     PROMPT_COMMAND=""
     ;;
-*)
+  *)
     ;;
 esac
 
 # Set command prompt
 if [ $UID -eq 0 ]; then
-    PS1="\[$(tput bold)$(tput setaf 1)\][\u@\h \W]\$\[$(tput sgr0)\] "
+  PS1="\[$(tput bold)$(tput setaf 1)\][\u@\h \W]\$\[$(tput sgr0)\] "
 else
-    PS1="\[$(tput bold)$(tput setaf 2)\][\u@\h \W]\$\[$(tput sgr0)\] "
+  PS1="\[$(tput bold)$(tput setaf 2)\][\u@\h \W]\$\[$(tput sgr0)\] "
 fi
 
 # Short Commands
