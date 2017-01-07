@@ -1,7 +1,7 @@
 #!/bin/sh
 
 DOTFILES_DIR="$HOME/.dotfiles"
-cd $DOTFILES_DIR
+cd $DOTFILES_DIR || exit
 
 install() {
   printf "Install dotfiles...\n"
@@ -14,12 +14,12 @@ install() {
   printf "Install completes.\n"
 }
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
+if [ "$1" = "--force" ] || [ "$1" = "-f" ]; then
   install;
 else
-  WARN_MSG="This may overwrite existing files in your home directory. Are you sure? (y/n) "
-  read -p "$WARN_MSG" ANSWER
-  if [ "$ANSWER" == "y" ]; then
+  printf "This may overwrite existing files in your home directory. Are you sure? (y/n) "
+  read ANSWER
+  if [ "$ANSWER" = "y" ]; then
     install;
   else
     printf "Install aborts.\n"
