@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd "$(dirname $0)" || exit
+cd "$(dirname "$0")" || exit
 SOURCE_DIR="$(pwd)"
 DOTFILES_DIR="$HOME/.dotfiles"
 
