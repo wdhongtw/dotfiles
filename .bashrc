@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # .bashrc
 
 # Source global definitions
@@ -27,18 +28,12 @@ fi
 # Short Commands
 alias view="vim -R"
 alias gdb="gdb -q"
-alias grep="grep -i"
+alias grep="grep -i --color=auto"
 alias rm="rm -i"
 alias ll="ls -al"
-
-# Set color of less pager
-export LESS_TERMCAP_mb="$(tput bold)$(tput setaf 1)"
-export LESS_TERMCAP_md="$(tput bold)$(tput setaf 4)"
-export LESS_TERMCAP_me="$(tput sgr0)"
-export LESS_TERMCAP_so="$(tput rev)"
-export LESS_TERMCAP_se="$(tput sgr0)"
-export LESS_TERMCAP_us="$(tput bold)$(tput smul)$(tput setaf 2)"
-export LESS_TERMCAP_ue="$(tput sgr0)"
+if which journalctl >/dev/null 2>&1; then
+  alias journalctl="journalctl -e"
+fi
 
 # Set default pager and editor
 export PAGER="less -s"
@@ -55,5 +50,6 @@ export HOSTALIASES="$HOME/.hosts"
 
 # Source definitions within $HOME/.bashrc.d folder
 for file in $HOME/.bashrc.d/*.bash; do
+  # shellcheck disable=SC1090
   . "$file"
 done
