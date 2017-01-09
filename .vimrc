@@ -71,3 +71,9 @@ nnoremap <S-k> zk
 :command! Tab2Space execute '%s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
 :command! Space2Tab execute '%s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
 :command! RemoveTWS execute '%s/\s\+$//e'
+
+" Tab navigation
+nnoremap <C-t> :tabnew<CR>
+nnoremap <C-w> :tabclose<CR>
+nnoremap <C-PageUp> :tabprevious<CR>
+nnoremap <C-PageDown> :tabnext<CR>
