@@ -48,6 +48,9 @@ export LANGUAGE=en_US.UTF-8
 # Enable user-specific host alias
 export HOSTALIASES="$HOME/.hosts"
 
+# Remove duplicated command history record
+export HISTCONTROL=ignoreboth:erasedups
+
 # Source definitions within $HOME/.bashrc.d folder
 for file in $HOME/.bashrc.d/*.bash; do
   # shellcheck disable=SC1090
