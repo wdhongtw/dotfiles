@@ -9,6 +9,9 @@ fi
 # Enable empty list while using globbing feature
 shopt -s nullglob
 
+# Disable terminal flow control feature
+stty -ixon
+
 # Disable PROMPT_COMMAND for better UX in screen and tmux
 case "$TERM" in
   screen*|tmux*)
