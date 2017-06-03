@@ -16,17 +16,6 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-w> <C-w><C-w>
 
-" ==== Spaces & Tabs ====
-set tabstop=8
-set shiftwidth=4
-set expandtab
-set smarttab
-autocmd FileType c,cpp set shiftwidth=2
-autocmd FileType html,css,javascript set shiftwidth=2
-autocmd FileType java set shiftwidth=2
-autocmd FileType sh set shiftwidth=2
-autocmd FileType make set noexpandtab
-
 " ==== UI Config ====
 set showcmd
 set number
@@ -47,7 +36,6 @@ set smartcase
 set backspace=2
 set scrolloff=2
 set autoindent
-autocmd FileType c set cindent
 
 " Mark trailing space and line longer than 80 char
 call matchadd('ErrorMsg', '\%>80v.\+')
@@ -59,11 +47,6 @@ set formatoptions=c,q,r,t
 " Enable folding feature
 set nofoldenable
 set foldmethod=syntax
-autocmd FileType java set foldmethod=indent
-autocmd FileType javascript set foldmethod=indent
-autocmd FileType python set foldmethod=indent
-autocmd FileType sh set foldmethod=indent
-autocmd FileType xml set foldmethod=indent
 nnoremap <S-j> zj
 nnoremap <S-k> zk
 
@@ -79,3 +62,12 @@ nnoremap <C-PageUp> :tabprevious<CR>
 nnoremap <C-PageDown> :tabnext<CR>
 nnoremap <C-p> :tabprevious<CR>
 nnoremap <C-n> :tabnext<CR>
+
+" Use .vim/swapfiles to keeps .swp files
+if !isdirectory($HOME . "/.vim/swap")
+    call mkdir($HOME . "/.vim/swap", "p")
+endif
+set directory=~/.vim/swap//
+
+" Source other config files from .vimrc.d
+runtime! vimrc.d/*.vim
