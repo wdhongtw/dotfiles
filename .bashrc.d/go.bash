@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
+# Set GOPATH and PATH for better UX
+if [ -z "$GOPATH" ]; then
+  export GOPATH=$HOME/.go
+  export PATH=$PATH:$GOPATH/bin
+fi
 
-# Set GOPATH for better UX
+# Create basic directories for GOPATH
 if [ ! -d $GOPATH ]; then
   mkdir -p $GOPATH/bin $GOPATH/src $GOPATH/pkg
 fi
