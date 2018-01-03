@@ -56,10 +56,6 @@ nnoremap <S-k> zk
 :command! RemoveTWS execute '%s/\s\+$//e'
 
 " Tab navigation
-nnoremap <C-t> :tabnew<CR>
-nnoremap <C-w> :tabclose<CR>
-nnoremap <C-PageUp> :tabprevious<CR>
-nnoremap <C-PageDown> :tabnext<CR>
 nnoremap <C-p> :tabprevious<CR>
 nnoremap <C-n> :tabnext<CR>
 
