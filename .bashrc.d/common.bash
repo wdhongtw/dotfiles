@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 # .bashrc
 
-# Enable empty list while using globbing feature
-shopt -s nullglob
-
 # Disable terminal flow control feature
 stty -ixon
 
