@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# Allow colorful man page
-if lsb_release -a | grep "Fedora" >/dev/null; then
+# Allow colorful man page (workaround for Fedora)
+if which lsb_release >/dev/null && \
+  lsb_release -a 2>&1 | grep "Fedora" >/dev/null; then
   export GROFF_NO_SGR="1"
 fi
 

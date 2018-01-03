@@ -10,6 +10,7 @@ install() {
     --exclude "bootstrap.sh" \
     --exclude "install.sh" \
     --exclude "README.md" \
+    --exclude "ignores"
     -avh --no-perms . $HOME;
   printf "Install completes.\n"
 }
