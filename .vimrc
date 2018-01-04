@@ -67,3 +67,6 @@ set directory=~/.vim/swap//
 
 " Source other config files from .vimrc.d
 runtime! vimrc.d/*.vim
+
+" Source overriding config files from after folder
+runtime! after/*.vim
