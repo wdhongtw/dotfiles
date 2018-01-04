@@ -1,15 +1,14 @@
 #!/bin/sh
 
-DOTFILES_DIR="$HOME/.dotfiles"
-cd "$DOTFILES_DIR" || exit
+cd "$(dirname "$0")" || exit
 
 FILE_LIST=".screenrc .tmux.conf .vimrc .vimrc.d .bashrc.d"
 install() {
-  printf "Install dotfiles...\n"
+  printf "Link dotfiles...\n"
   for FILE in $FILE_LIST; do
-    rsync -avh --no-perms "$FILE" "$HOME";
+    ln -s -v "$(pwd)/$FILE" "$HOME";
   done
-  printf "Install completes.\n"
+  printf "Link completes.\n"
   printf "Create folders for vim temporary files in \$HOME/.vim.\n"
   for FOLDER in undo swap backup; do
     mkdir -p -v "$HOME/.vim/$FOLDER"
@@ -19,7 +18,7 @@ install() {
 if [ "$1" = "--force" ] || [ "$1" = "-f" ]; then
   install;
 else
-  printf "This may overwrite existing files in your home directory. Are you sure? (y/n) "
+  printf "Install dotfiles into your home folder as softlinks. Are you sure? (y/n) "
   read ANSWER
   if [ "$ANSWER" = "y" ]; then
     install;

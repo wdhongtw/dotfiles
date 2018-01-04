@@ -9,6 +9,10 @@ This utility assumes that the files to install were put in `$HOME/.dotfiles`
 - Use `bootstrap.sh` to creaty symbolic link at `$HOME/.dotfiles`
 - Use `install.sh` to install files from `$HOME/.dotfiles` to home folder.
 
+or
+
+- Use `softlink.sh` to create dotfiles as softlinks in home folder.
+
 ## Note
 
 `.bashrc` file is no longer provided, as that most Linux distribution will
