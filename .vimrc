@@ -59,14 +59,10 @@ nnoremap <S-k> zk
 nnoremap <C-p> :tabprevious<CR>
 nnoremap <C-n> :tabnext<CR>
 
-" Use .vim/swapfiles to keeps .swp files
-if !isdirectory($HOME . "/.vim/swap")
-    call mkdir($HOME . "/.vim/swap", "p")
-endif
-set directory=~/.vim/swap//
+" Set folders for common temporary files
+set undodir^=~/.vim/undo
+set directory^=~/.vim/swap//
+set backupdir^=~/.vim/backup
 
-" Source other config files from .vimrc.d
-runtime! vimrc.d/*.vim
-
-" Source overriding config files from after folder
-runtime! after/*.vim
+" Prepand .vimrc.d to runtimepath
+set runtimepath^=~/.vimrc.d
