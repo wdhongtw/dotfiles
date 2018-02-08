@@ -38,8 +38,9 @@ set scrolloff=2
 set autoindent
 
 " Mark trailing space and line longer than 80 char
-call matchadd('ErrorMsg', '\%>80v.\+')
-call matchadd('ErrorMsg', '\s\+$')
+" Visual group have great default background color
+call matchadd('Visual', '\%>80v.\+')
+call matchadd('Visual', '\s\+$')
 
 set textwidth=80
 set formatoptions=c,q,r,t
