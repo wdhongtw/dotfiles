@@ -39,8 +39,8 @@ set autoindent
 
 " Mark trailing space and line longer than 80 char
 " Visual group have great default background color
-call matchadd('Visual', '\%>80v.\+')
-call matchadd('Visual', '\s\+$')
+au BufWinEnter * let w:m1=matchadd('Visual', '\%>80v.\+')
+au BufWinEnter * let w:m2=matchadd('Visual', '\s\+$')
 
 set formatoptions=c,q,r,t
 
