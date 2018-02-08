@@ -42,7 +42,6 @@ set autoindent
 call matchadd('Visual', '\%>80v.\+')
 call matchadd('Visual', '\s\+$')
 
-set textwidth=80
 set formatoptions=c,q,r,t
 
 " Enable folding feature
