@@ -8,14 +8,6 @@ syntax on
 " Set extension for markdown file
 autocmd BufNewFile,BufRead *.md  set filetype=markdown
 
-" ==== Remap ====
-" Split navigation
-nnoremap <C-h> <C-w><C-h>
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-l> <C-w><C-l>
-nnoremap <C-w> <C-w><C-w>
-
 " ==== UI Config ====
 set showcmd
 set number
@@ -47,13 +39,17 @@ set formatoptions=c,q,r,t
 " Enable folding feature
 set nofoldenable
 set foldmethod=syntax
-nnoremap <S-j> zj
-nnoremap <S-k> zk
 
 " Functions
 :command! Tab2Space execute '%s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
 :command! Space2Tab execute '%s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
 :command! RemoveTWS execute '%s/\s\+$//e'
+
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
 
 " Tab navigation
 nnoremap <C-p> :tabprevious<CR>
@@ -66,3 +62,5 @@ set backupdir^=~/.vim/backup
 
 " Prepand .vimrc.d to runtimepath
 set runtimepath^=~/.vimrc.d
+
+call SourceIfExists("~/.vimafter")
