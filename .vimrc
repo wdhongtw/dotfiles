@@ -51,9 +51,10 @@ function! SourceIfExists(file)
   endif
 endfunction
 
-" Tab navigation
-nnoremap <C-p> :tabprevious<CR>
-nnoremap <C-n> :tabnext<CR>
+" Buffer navigation and options
+set hidden
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
 
 " Set folders for common temporary files
 set undodir^=~/.vim/undo
