@@ -14,7 +14,6 @@ case "$TERM" in
 esac
 
 # Short Commands
-alias view="vim -R"
 alias gdb="gdb -q"
 alias grep="grep -i --color=auto"
 alias rm="rm -i"
