@@ -52,6 +52,9 @@ function! SourceIfExists(file)
   endif
 endfunction
 
+" Timeout stuffs
+set ttimeoutlen=50
+
 " Buffer navigation and options
 set hidden
 
