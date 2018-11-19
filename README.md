@@ -26,6 +26,7 @@ by hand for the settings in `.bashrc.d/*.bash` to work.
 ``` bash
 # Source definitions within $HOME/.bashrc.d folder
 for file in $HOME/.bashrc.d/*.bash; do
+  [ -e "$file" ] || continue
   source "$file"
 done
 ```
