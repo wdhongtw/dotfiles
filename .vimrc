@@ -43,12 +43,6 @@ set foldmethod=syntax
 :command! Space2Tab execute '%s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
 :command! RemoveTWS execute '%s/\s\+$//e'
 
-function! SourceIfExists(file)
-  if filereadable(expand(a:file))
-    exe 'source' a:file
-  endif
-endfunction
-
 " Timeout stuffs
 set ttimeoutlen=50
 
@@ -62,5 +56,3 @@ set backupdir^=~/.vim/backup
 
 " Prepand .vimrc.d to runtimepath
 set runtimepath^=~/.vimrc.d
-
-call SourceIfExists("~/.vimafter")
