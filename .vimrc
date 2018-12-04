@@ -49,10 +49,5 @@ set ttimeoutlen=50
 " Buffer navigation and options
 set hidden
 
-" Set folders for common temporary files
-set undodir^=~/.vim/undo
-set directory^=~/.vim/swap//
-set backupdir^=~/.vim/backup
-
 " Prepand .vimrc.d to runtimepath
 set runtimepath^=~/.vimrc.d

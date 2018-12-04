@@ -12,9 +12,6 @@ install() {
   done
   printf "Install completes.\n"
   printf "Create folders for vim temporary files in \$HOME/.vim.\n"
-  for FOLDER in undo swap backup; do
-    mkdir -p -v "$DEST_HOME/.vim/$FOLDER"
-  done
 }
 
 if [ "$1" = "--force" ] || [ "$1" = "-f" ]; then
