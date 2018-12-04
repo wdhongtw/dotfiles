@@ -5,9 +5,6 @@ filetype plugin on
 filetype indent on
 syntax on
 
-" Set extension for markdown file
-autocmd BufNewFile,BufRead *.md  set filetype=markdown
-
 " ==== UI Config ====
 set showcmd
 set number
