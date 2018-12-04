@@ -18,7 +18,7 @@ if [ "$1" = "--force" ] || [ "$1" = "-f" ]; then
   install;
 else
   printf "This may overwrite existing files in your home directory. Are you sure? (y/n) "
-  read ANSWER
+  read -r ANSWER
   if [ "$ANSWER" = "y" ]; then
     install;
   else

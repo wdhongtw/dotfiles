@@ -17,7 +17,7 @@ if [ "$1" = "--force" ] || [ "$1" = "-f" ]; then
   install;
 else
   printf "Install dotfiles into your home folder as softlinks. Are you sure? (y/n) "
-  read ANSWER
+  read -r ANSWER
   if [ "$ANSWER" = "y" ]; then
     install;
   else
