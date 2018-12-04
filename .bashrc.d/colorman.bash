@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-# Allow colorful man page (workaround for Fedora)
-if which lsb_release >/dev/null && \
-  lsb_release -a 2>&1 | grep "Fedora" >/dev/null; then
-  export GROFF_NO_SGR="1"
-fi
-
 # Set color of less pager
 LESS_TERMCAP_mb="$(tput bold)$(tput setaf 1)"
 LESS_TERMCAP_md="$(tput bold)$(tput setaf 4)"
