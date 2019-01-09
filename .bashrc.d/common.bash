@@ -4,6 +4,9 @@
 # Disable terminal flow control feature
 stty -ixon
 
+# Enable verbose job checking when exit bash
+shopt -u checkjobs
+
 # Disable PROMPT_COMMAND for better UX in screen and tmux
 case "$TERM" in
   screen*|tmux*)
