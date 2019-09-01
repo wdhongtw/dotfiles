@@ -10,6 +10,7 @@ set showcmd
 set number
 set background=dark
 set cursorline
+set mouse=a
 
 " ==== Ruler & Status Line ====
 set laststatus=2
