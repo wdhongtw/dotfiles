@@ -17,25 +17,8 @@ vbell off
 # Enable 256 color
 term "screen-256color"
 
-# Change default prefix key to Ctrl-B
-escape ^Bb
-
 # Let window count starting with 1
 bind "c" screen 1
 bind "^c" screen 1
 bind "0" select 10
 screen 1
-
-# Bind function keys to common tasks
-bindkey "^[OP"   screen 1
-bindkey "^[[11~" screen 1
-bindkey "^[OQ"   screen 1
-bindkey "^[[12~" screen 1
-bindkey "^[OR"   prev
-bindkey "^[[13~" prev
-bindkey "^[OS"   next
-bindkey "^[[14~" next
-bindkey "^[[15~" source .screenrc
-bindkey "^[[17~" detach
-bindkey "^[[18~" copy
-bindkey "^[[19~" title
